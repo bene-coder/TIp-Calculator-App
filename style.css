@@ -1,0 +1,233 @@
+/* ### Primary */
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  /* ### Neutral */
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+body {
+  background-color: hsl(172, 67%, 45%);
+  height: 100vh;
+  width: 100%;
+}
+.logo {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: -3rem;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--White);
+  width: 20rem;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  padding: 2rem;
+  margin-top: 7rem;
+  border-radius: 10px;
+}
+.bill-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  color: hsl(183, 100%, 15%);
+}
+.bill-container input {
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  font-weight: 700;
+  height: 2rem;
+  font-size: 24px;
+  margin-top: 0.5rem;
+  text-align: right;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-image: url(/images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  padding: 1rem;
+}
+.tip-option {
+  display: grid;
+  color: hsl(183, 100%, 15%);
+  margin-top: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 0.8em;
+  column-gap: 1.2em;
+}
+.select label {
+  color: hsl(183, 100%, 15%);
+}
+.tip-option div {
+  display: flex;
+  background-color: hsl(183, 100%, 15%);
+  color: var(--White);
+  height: 2.3rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  justify-content: center;
+}
+.tip-option .custom-tip {
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+}
+.people-number {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  color: hsl(183, 100%, 15%);
+}
+.people-number input {
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  font-weight: 700;
+  font-size: 24px;
+  width: 100%;
+  height: 2rem;
+  text-align: right;
+  margin-top: 0.5rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-image: url(images/icon-person.svg);
+  background-repeat: no-repeat;
+  padding: 1rem;
+}
+.error {
+  display: none;
+  color: red;
+}
+.tip-option .active-tip {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+.amount-container {
+  display: flex;
+  background-color: hsl(183, 100%, 15%);
+  flex-direction: column;
+  color: hsl(184, 14%, 56%);
+  justify-content: space-between;
+  height: 12rem;
+  border-radius: 7px;
+  width: auto;
+  padding: 1rem;
+}
+.amount-container label {
+  color: hsl(189, 41%, 97%);
+}
+.tip-amount-container,
+.total-container {
+  display: flex;
+  justify-content: space-between;
+}
+.people-number .label {
+  display: flex;
+  justify-content: space-between;
+}
+.tip-amount-container .tip-amount {
+  display: flex;
+  background-color: hsl(183, 100%, 15%);
+  border: none;
+  color: hsl(172, 67%, 45%);
+  outline: none;
+  font-size: 24px;
+  font-weight: 700;
+  width: 9rem;
+  justify-content: end;
+  margin-right: 2rem;
+}
+.total-container .total {
+  display: flex;
+  background-color: hsl(183, 100%, 15%);
+  border: none;
+  color: hsl(172, 67%, 45%);
+  outline: none;
+  font-size: 24px;
+  font-weight: 700;
+  width: 9rem;
+  justify-content: end;
+  margin-right: 2rem;
+}
+.tip-part {
+  display: flex;
+  flex-direction: column;
+}
+.total-part {
+  display: flex;
+  flex-direction: column;
+}
+.reset {
+  height: 2rem;
+  background-color: hsl(172, 67%, 45%);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: hsl(183, 100%, 15%);
+}
+
+@media only screen and (min-width: 1000px) {
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    width: 50rem;
+    height: 23rem;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    padding: 2rem;
+    margin-top: 7rem;
+    border-radius: 10px;
+  }
+  .tip-option {
+    display: grid;
+    color: hsl(183, 100%, 15%);
+    margin-top: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 0.8em;
+    column-gap: 1.2em;
+  }
+  .tip-container {
+    width: 25rem;
+    height: auto;
+
+  }
+  .people-number {
+    margin-top: 1.7rem;
+    margin-bottom: 2rem;  
+  }
+  .amount-container {
+    justify-content: space-between;
+    height: auto;
+    margin-left: -1.7rem;
+    border-radius: 7px;
+    width: 19.5rem;
+    padding: 1rem;
+  }
+  .logo {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7rem;
+    margin-bottom: -3rem;
+  }
+}

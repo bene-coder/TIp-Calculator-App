@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <img src="images/logo.svg" alt="logo" class="logo" />
+    <div class="main-container">
+      <div class="tip-container">
+        <section class="bill-container">
+          <label for="">Bill</label>
+          <input
+            type="number"
+            name="dollar-bill"
+            class="money-bill"
+            placeholder="0.0"
+          />
+        </section>
+        <section class="select">
+          <label for=""> Select Tip %</label>
+          <div class="tip-option">
+            <div class="tips">5%</div>
+            <div class="tips">10%</div>
+            <div class="tips active-tip">15%</div>
+            <div class="tips">25%</div>
+            <div class="tips">50%</div>
+            <div class="custom-tip" placeholder="Custom"></div>
+          </div>
+          <div class="people-number">
+            <div class="label">
+            <label for="">Number of People</label>
+            <label for="" class="error">Can't be zero</label>
+          </div>
+            <input
+              type="number"
+              name="Number of People"
+              class="people-no"
+              placeholder="1"
+            />
+          </div>
+        </section>
+      </div>
+      <div class="amount-container">
+        <div class="tip-amount-container">
+          <div class="tip-part">
+            <label for="">Tip Amount</label> <br />
+            <p>/ person</p>
+          </div>
+          <div class="tip-amount"></div>
+        </div>
+        <div class="total-container">
+          <div class="total-part">
+            <label for="">Total</label>
+            <p>/ person</p>
+          </div>
+          <div class="total"></div>
+        </div>
+        <button class="reset">Reset</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
