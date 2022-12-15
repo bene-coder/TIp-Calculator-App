@@ -1,14 +1,16 @@
 const billType = document.querySelector(".money-bill");
 const tips = document.querySelectorAll(".tips");
 const peopleNumber = document.querySelector(".people-no");
-var tipAmount = document.querySelector(".tip-amount");
+const tipAmount = document.querySelector(".tip-amount");
 const total = document.querySelector(".total");
 const reset = document.querySelector(".reset");
 const error = document.querySelector(".error");
+const custom = document.querySelector(".custom-tips");
 
 billType.addEventListener("input", billTypeFunc);
 peopleNumber.addEventListener("input", peopleFunc);
 reset.addEventListener("click", resetBtn);
+custom.addEventListener("input", customFunc)
 
 tips.forEach(function (val) {
   val.addEventListener("click", handleEvent);
@@ -16,6 +18,7 @@ tips.forEach(function (val) {
 
 billType.value = "";
 peopleNumber.value = "";
+custom.value = "";
 tipAmount.innerHTML = "$" + (0.0).toFixed(2);
 total.innerHTML = "$" + (0.0).toFixed(2);
 
@@ -47,7 +50,7 @@ function handleEvent(event) {
 function calculateTip() {
   if (peopleValue >= 1) {
     let tipmount = (billValue * tipValue) / peopleValue;
-    let totall = (billValue * tipValue) / peopleValue;
+    let totall = (billValue + tipmount) / peopleValue;
     tipAmount.innerHTML = "$" + tipmount.toFixed(2);
     total.innerHTML = "$" + totall.toFixed(2);
   }
@@ -59,14 +62,24 @@ function resetBtn() {
   peopleNumber.value = "";
   tipAmount.innerHTML = "$" + (0.0).toFixed(2);
   total.innerHTML = "$" + (0.0).toFixed(2);
+  custom.value = ""
 }
 
 function errorTag() {
   if (peopleValue == 0) {
     error.style.display = "flex";
-      error.style.color = "red";
-      peopleNumber.style.border = "red";
+    error.style.color = "red";
+    peopleNumber.style.border = "2px solid red";
   } else {
-      error.style.display = "none";
-    }
+    error.style.display = "none";
+    peopleNumber.style.border = "none";
+  }
+}
+
+function customFunc() {
+  customValue = parseFloat(custom.value / 100);
+  tips.forEach(function (val) {
+    val.classList.remove("active-tip");
+  })
+  calculateTip();
 }
